@@ -11,7 +11,19 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('Controller@test');
-//});
+use Illuminate\Support\Facades\Route;
+
+
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::get('user', 'Controller@getAuthUser');
+});
+
 Route::get('/', 'Controller@getAllInfo');
+
+//Admin
+Route::match(['get', 'post'],'/admin/login', 'AdminController@login');
+Route::get('/admin/index', 'AdminController@index');
+Route::get('/admin/logout', 'AdminController@logout');
+Route::get('/admin/users', 'AdminController@getAllUser');
+Route::get('/admin/foods', 'AdminController@getAllFood');
+Route::match(['get', 'post'],'/admin/addfood', 'AdminController@addFood');
