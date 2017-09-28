@@ -86,13 +86,29 @@ class AdminController extends BaseController
     public function addFood(Request $request)
     {
         if (session('email') && session('password')) {
-            $name = $request->get('name');
-            $price = $request->get('price');
-            $description = $request->get('description');
-            $isFeature = $request->get('is-feature');
-            $category = $request->get('category-id');
 
-            return view('admin.addfood', ['categorys' => $this->getAllCategoryFood(), 'categoryType' => $category]);
+            $data = array();
+            $rs = null;
+            $data['name'] = $request->get('name');
+            $data['price'] = $request->get('price');
+            $data['description'] = $request->get('description');
+            $data['is_feature'] = $request->get('is-feature') === 1 ? 1 : 0;
+            $categorys = explode('|', $request->get('category'));
+            $data['category_id'] = $categorys[0];
+            if ($data['name'] && $data['price']) {
+
+//                $filename = $request->file('thumbnail')->getClientOriginalName();
+                $file = $request->input('thumbnail');
+                $photo = $request->file('thumbnail')->getClientOriginalName();
+                $destination = base_path() . '/public/foods';
+
+
+
+                $data['thumbnail'] = $filename;
+                $rs = $this->foodRepository->create($data);
+            }
+
+            return view('admin.addfood', ['categorys' => $this->getAllCategoryFood(), '$data' => $data, 'message' => $rs]);
         }
         return view('admin.login');
     }

@@ -157,6 +157,7 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name Food</label>
                         <input name="name" type="text" class="form-control" id="exampleInputEmail1"
+                               value="<?php isset($data['name']) ? $data['name'] : '';?>"
                                placeholder="Enter name food">
                     </div>
                     <div class="form-group">
@@ -171,27 +172,24 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input name="is-feature" type="checkbox"> Is Feature
+                            <input name="is-feature" type="checkbox" value="1"> Is Feature
                         </label>
                     </div>
                     <div class="form-group">
                         <label>Category</label>
-                        <select class="form-control" name="category-id">
+                        <select class="form-control" name="category">
                             <?php $categoryList = isset($categorys) ? $categorys : array();
                             foreach ($categoryList as $category) :?>
-                            <option><?php echo $category->name?></option>
+                            <option value="<?php echo $category->id . '|' . $category->name?>"><?php echo $category->name?></option>
                             <?php endforeach;?>
                         </select>
                     </div>
-                    <div>===========<?php echo $categoryType?></div>
                     <div class="form-group">
                         <label for="exampleInputFile">File input</label>
-                        <input type="file" id="exampleInputFile">
-
-                        <p class="help-block">Example block-level help text here.</p>
+                        <input type="file" id="exampleInputFile" name="thumbnail">
                     </div>
                 </div>
-
+                <div>======Message========<?php echo isset($message) ? $message : '' ?></div>
                 <div class="box-footer">
                     <button type="submit" class="btn btn-primary"
                             style="padding: 10px 30px 10px 30px; font-size: 20px;">Add

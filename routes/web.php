@@ -27,3 +27,7 @@ Route::get('/admin/logout', 'AdminController@logout');
 Route::get('/admin/users', 'AdminController@getAllUser');
 Route::get('/admin/foods', 'AdminController@getAllFood');
 Route::match(['get', 'post'],'/admin/addfood', 'AdminController@addFood');
+//Route::post('/admin/addfood', function () {
+//    request()->file('thumbnail')->store('foods');
+//    return back();
+//});
