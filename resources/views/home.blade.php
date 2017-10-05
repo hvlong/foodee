@@ -1,17 +1,20 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Foodee &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-    <meta name="author" content="FREEHTML5.CO" />
+    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
+    <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
+    <meta name="author" content="FREEHTML5.CO"/>
 
     <!--
       //////////////////////////////////////////////////////
@@ -33,15 +36,16 @@
     <meta property="og:url" content=""/>
     <meta property="og:site_name" content=""/>
     <meta property="og:description" content=""/>
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Merriweather:300,400italic,300italic,400,700italic'
+          rel='stylesheet' type='text/css'>
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css">
@@ -119,7 +123,7 @@
         <div class="fh5co-2col fh5co-text">
             <h2 class="heading to-animate">About Us</h2>
             <p class="to-animate">{!! $contact->about_us !!}</p>
-            <p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">Chi tiết</a></p>
+            <p class="text-center to-animate"><a href="#" class="btn btn-primary btn-outline">More</a></p>
         </div>
     </div>
 
@@ -132,13 +136,15 @@
 
                         <li>
                             <blockquote>
-                                <p>&ldquo;Cooking is an art, but all art requires knowing something about the techniques and materials&rdquo;</p>
+                                <p>&ldquo;Cooking is an art, but all art requires knowing something about the techniques
+                                    and materials&rdquo;</p>
                                 <p class="quote-author">&mdash; Nathan Myhrvold</p>
                             </blockquote>
                         </li>
                         <li>
                             <blockquote>
-                                <p>&ldquo;Give a man food, and he can eat for a day. Give a man a job, and he can only eat for 30 minutes on break.&rdquo;</p>
+                                <p>&ldquo;Give a man food, and he can eat for a day. Give a man a job, and he can only
+                                    eat for 30 minutes on break.&rdquo;</p>
                                 <p class="quote-author">&mdash; Lev L. Spiro</p>
                             </blockquote>
                         </li>
@@ -150,7 +156,8 @@
                         </li>
                         <li>
                             <blockquote>
-                                <p>&ldquo;Never work before breakfast; if you have to work before breakfast, eat your breakfast first.&rdquo;</p>
+                                <p>&ldquo;Never work before breakfast; if you have to work before breakfast, eat your
+                                    breakfast first.&rdquo;</p>
                                 <p class="quote-author">&mdash; Josh Billings</p>
                             </blockquote>
                         </li>
@@ -167,34 +174,37 @@
         <div class="container">
             <div class="row text-center fh5co-heading row-padded">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="heading to-animate">Món đặc trưng</h2>
-                    <p class="sub-heading to-animate">Ăn 1 lần, nhớ mãi mãi</p>
+                    <h2 class="heading to-animate">Feature Food</h2>
+                    <p class="sub-heading to-animate">Eat One, Forever In Mind</p>
                 </div>
             </div>
             <div class="row">
                 <div class="fh5co-grid">
                     <div class="fh5co-v-half to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({!! $featureFood[0]->thumbnail !!}) "></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img"
+                             style="background-image: url({!! $featureFood[0]->thumbnail !!}) "></div>
                         <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                             <h2>{!! $featureFood[0]->name !!}</h2>
-                            <span class="pricing">{!! $featureFood[0]->price !!} .000VNĐ</span>
+                            <span class="pricing">{!! number_format(($featureFood[0]->price/100), 3) !!}VNĐ</span>
                             <p>{!! $featureFood[0]->description !!}</p>
                         </div>
                     </div>
                     <div class="fh5co-v-half">
                         <div class="fh5co-h-row-2 to-animate-2">
-                            <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({!! $featureFood[1]->thumbnail !!})"></div>
+                            <div class="fh5co-v-col-2 fh5co-bg-img"
+                                 style="background-image: url({!! $featureFood[1]->thumbnail !!})"></div>
                             <div class="fh5co-v-col-2 fh5co-text arrow-left">
                                 <h2>{!! $featureFood[1]->name !!}</h2>
-                                <span class="pricing">{!! $featureFood[1]->price !!} .000VNĐ</span>
+                                <span class="pricing">{!! number_format(($featureFood[1]->price/100), 3) !!}VNĐ</span>
                                 <p>{!! $featureFood[1]->description !!}</p>
                             </div>
                         </div>
                         <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-                            <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({!! $featureFood[2]->thumbnail !!})"></div>
+                            <div class="fh5co-v-col-2 fh5co-bg-img"
+                                 style="background-image: url({!! $featureFood[2]->thumbnail !!})"></div>
                             <div class="fh5co-v-col-2 fh5co-text arrow-right">
                                 <h2>{!! $featureFood[2]->name !!}</h2>
-                                <span class="pricing">{!! $featureFood[2]->price !!} .000VNĐ</span>
+                                <span class="pricing">{!! number_format(($featureFood[2]->price/100), 3) !!}VNĐ</span>
                                 <p>{!! $featureFood[2]->description !!}</p>
                             </div>
                         </div>
@@ -202,27 +212,30 @@
 
                     <div class="fh5co-v-half">
                         <div class="fh5co-h-row-2 fh5co-reversed to-animate-2">
-                            <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({!! $featureFood[3]->thumbnail !!})"></div>
+                            <div class="fh5co-v-col-2 fh5co-bg-img"
+                                 style="background-image: url({!! $featureFood[3]->thumbnail !!})"></div>
                             <div class="fh5co-v-col-2 fh5co-text arrow-right">
                                 <h2>{!! $featureFood[3]->name !!}</h2>
-                                <span class="pricing">{!! $featureFood[3]->price !!} .000VNĐ</span>
+                                <span class="pricing">{!! number_format(($featureFood[3]->price/100), 3) !!}VNĐ</span>
                                 <p>{!! $featureFood[3]->description !!}</p>
                             </div>
                         </div>
                         <div class="fh5co-h-row-2 to-animate-2">
-                            <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({!! $featureFood[4]->thumbnail !!})"></div>
+                            <div class="fh5co-v-col-2 fh5co-bg-img"
+                                 style="background-image: url({!! $featureFood[4]->thumbnail !!})"></div>
                             <div class="fh5co-v-col-2 fh5co-text arrow-left">
                                 <h2>{!! $featureFood[4]->name !!}</h2>
-                                <span class="pricing">{!! $featureFood[4]->price !!} .000VNĐ</span>
+                                <span class="pricing">{!! number_format(($featureFood[4]->price/100), 3) !!}VNĐ</span>
                                 <p>{!! $featureFood[4]->description !!}</p>
                             </div>
                         </div>
                     </div>
                     <div class="fh5co-v-half to-animate-2">
-                        <div class="fh5co-v-col-2 fh5co-bg-img" style="background-image: url({!! $featureFood[5]->thumbnail !!})"></div>
+                        <div class="fh5co-v-col-2 fh5co-bg-img"
+                             style="background-image: url({!! $featureFood[5]->thumbnail !!})"></div>
                         <div class="fh5co-v-col-2 fh5co-text fh5co-special-1 arrow-left">
                             <h2>{!! $featureFood[5]->name !!}</h2>
-                            <span class="pricing">{!! $featureFood[5]->price !!} .000VNĐ</span>
+                            <span class="pricing">{!! number_format(($featureFood[5]->price/100), 3) !!}VNĐ</span>
                             <p>{!! $featureFood[5]->description !!}</p>
                         </div>
                     </div>
@@ -237,30 +250,16 @@
         <div class="fh5co-overlay"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 to-animate">
-                    <div class="fh5co-type">
-                        <h3 class="with-icon icon-1">Fruits</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                @php($counter = 1)
+                @foreach($categorys as $category)
+                    <div class="col-md-3 to-animate">
+                        <div class="fh5co-type">
+                            <h3 class="with-icon icon-{{$counter}}">{{$category->name}}</h3>
+                            <div style="flex-grow: 1;">{{$category->description}}</div>
+                            @php($counter++)
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 to-animate">
-                    <div class="fh5co-type">
-                        <h3 class="with-icon icon-2">Sea food</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 to-animate">
-                    <div class="fh5co-type">
-                        <h3 class="with-icon icon-3">Vegetables</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 to-animate">
-                    <div class="fh5co-type">
-                        <h3 class="with-icon icon-4">Meat</h3>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -270,7 +269,6 @@
             <div class="row text-center fh5co-heading row-padded">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="heading to-animate">Food Menu</h2>
-                    <p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 </div>
             </div>
             <div class="row row-padded">
@@ -278,62 +276,71 @@
                     <div class="fh5co-food-menu to-animate-2">
                         <h2 class="fh5co-drinks">Drinks</h2>
                         <ul>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Pineapple Juice</h3>
-                                        <p>Far far away, behind the word mountains.</p>
+                            @foreach($drinks as $drink)
+                                <li>
+                                    <div class="fh5co-food-desc">
+                                        <figure>
+                                            <img style="height: 60px" src="{{ $drink->thumbnail }}"
+                                                 class="img-responsive">
+                                        </figure>
+                                        <div>
+                                            <h3>{{ $drink->name }}</h3>
+                                            <p>{{ $drink->description }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $17.50
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Green Juice</h3>
-                                        <p>Far far away, behind the word mountains.</p>
+                                    <div class="fh5co-food-pricing">
+                                        {!! number_format(($drink->price/100), 3) !!}VNĐ
                                     </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $7.99
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Soft Drinks</h3>
-                                        <p>Far far away, behind the word mountains.</p>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fh5co-food-menu to-animate-2">
+                        <h2 class="fh5co-dishes">Sea food</h2>
+                        <ul>
+                            @foreach($seaFoods as $seaFood)
+                                <li>
+                                    <div class="fh5co-food-desc">
+                                        <figure>
+                                            <img style="height: 60px" src="{{ $seaFood->thumbnail }}"
+                                                 class="img-responsive">
+                                        </figure>
+                                        <div>
+                                            <h3>{{ $seaFood->name }}</h3>
+                                            <p>{{ $seaFood->description }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $12.99
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Carlo Rosee Drinks</h3>
-                                        <p>Far far away, behind the word mountains.</p>
+                                    <div class="fh5co-food-pricing">
+                                        {!! number_format(($seaFood->price/100), 3) !!}VNĐ
                                     </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $12.99
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="fh5co-food-menu to-animate-2">
+                        <h2 class="fh5co-drinks">Vegetables</h2>
+                        <ul>
+                            @foreach($vegetables as $vegetable)
+                                <li>
+                                    <div class="fh5co-food-desc">
+                                        <figure>
+                                            <img style="height: 60px" src="{{ $vegetable->thumbnail }}"
+                                                 class="img-responsive">
+                                        </figure>
+                                        <div>
+                                            <h3>{{ $vegetable->name }}</h3>
+                                            <p>{{ $vegetable->description }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="fh5co-food-pricing">
+                                        {!! number_format(($vegetable->price/100), 3) !!}VNĐ
+                                    </div>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -341,188 +348,23 @@
                     <div class="fh5co-food-menu to-animate-2">
                         <h2 class="fh5co-dishes">Steak</h2>
                         <ul>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_3.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Beef Steak</h3>
-                                        <p>Far far away, behind the word mountains.</p>
+                            @foreach($meats as $meat)
+                                <li>
+                                    <div class="fh5co-food-desc">
+                                        <figure>
+                                            <img style="height: 60px" src="{{ $meat->thumbnail }}"
+                                                 class="img-responsive">
+                                        </figure>
+                                        <div>
+                                            <h3>{{ $meat->name }}</h3>
+                                            <p>{{ $meat->description }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $17.50
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_4.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Tomato with Chicken</h3>
-                                        <p>Far far away, behind the word mountains.</p>
+                                    <div class="fh5co-food-pricing">
+                                        {!! number_format(($meat->price/100), 3) !!}VNĐ
                                     </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $7.99
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Sausages from Italy</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $12.99
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_8.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Beef Grilled</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $12.99
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="fh5co-food-menu to-animate-2">
-                        <h2 class="fh5co-drinks">Drinks</h2>
-                        <ul>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Pineapple Juice</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $17.50
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Green Juice</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $7.99
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Soft Drinks</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $12.99
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Carlo Rosee Drinks</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $12.99
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="fh5co-food-menu to-animate-2">
-                        <h2 class="fh5co-dishes">Steak</h2>
-                        <ul>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_3.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Beef Steak</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $17.50
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_4.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Tomato with Chicken</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $7.99
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Sausages from Italy</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $12.99
-                                </div>
-                            </li>
-                            <li>
-                                <div class="fh5co-food-desc">
-                                    <figure>
-                                        <img src="images/res_img_8.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-                                    </figure>
-                                    <div>
-                                        <h3>Beef Grilled</h3>
-                                        <p>Far far away, behind the word mountains.</p>
-                                    </div>
-                                </div>
-                                <div class="fh5co-food-pricing">
-                                    $12.99
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -535,40 +377,29 @@
         </div>
     </div>
 
-    <div id="fh5co-events" data-section="events" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
+    <div id="fh5co-events" data-section="events" style="background-image: url(images/slide_2.jpg);"
+         data-stellar-background-ratio="0.5">
         <div class="fh5co-overlay"></div>
         <div class="container">
             <div class="row text-center fh5co-heading row-padded">
                 <div class="col-md-8 col-md-offset-2 to-animate">
                     <h2 class="heading">Upcoming Events</h2>
-                    <p class="sub-heading">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="sub-heading">The event usually open weekly, include Kitchen Workshops, Music Concerts,
+                        Free to Eat Party, Dink free Beer, Free Traveling, ... Please follow page and join event</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="fh5co-event to-animate-2">
-                        <h3>Kitchen Workshops</h3>
-                        <span class="fh5co-event-meta">March 19th, 2016</span>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
+                @foreach($events->slice(0,5) as $event)
+                    <div class="col-md-4">
+                        <div class="fh5co-event to-animate-2">
+                            <h3>{{$event->title}}</h3>
+                            <span class="fh5co-event-meta date-event">from {{date('d/m/Y', strtotime($event->date_start))}}
+                                to {{date('d/m/Y', strtotime($event->date_end))}}</span>
+                            <p>{{$event->description}}.</p>
+                            <p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="fh5co-event to-animate-2">
-                        <h3>Music Concerts</h3>
-                        <span class="fh5co-event-meta">March 19th, 2016</span>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="fh5co-event to-animate-2">
-                        <h3>Free to Eat Party</h3>
-                        <span class="fh5co-event-meta">March 19th, 2016</span>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                        <p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -577,7 +408,7 @@
         <div class="container">
             <div class="row text-center fh5co-heading row-padded">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="heading to-animate">Dặt Bàn</h2>
+                    <h2 class="heading to-animate">Reservation</h2>
                     {{--<p class="sub-heading to-animate">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>--}}
                 </div>
             </div>
@@ -589,9 +420,10 @@
                             <i class="icon-home"></i>
                             {!! $contact->address !!}
                         </li>
-                        <li><i class="icon-phone"></i>  {!! $contact->phone !!}</li>
+                        <li><i class="icon-phone"></i> {!! $contact->phone !!}</li>
                         <li><i class="icon-envelope"></i> {!! $contact->email !!}</li>
-                        <li><i class="icon-globe"></i> <a href={!! $contact->website !!} target="_blank"> {!! $contact->website !!}</a></li>
+                        <li><i class="icon-globe"></i> <a
+                                    href={!! $contact->website !!} target="_blank"> {!! $contact->website !!}</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 to-animate-2">
@@ -619,10 +451,10 @@
                     </div>
 
 
-
                     <div class="form-group ">
                         <label for="message" class="sr-only">Message</label>
-                        <textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+                        <textarea name="" id="message" cols="30" rows="5" class="form-control"
+                                  placeholder="Message"></textarea>
                     </div>
                     <div class="form-group ">
                         <input class="btn btn-primary" value="Send Message" type="submit">
@@ -639,7 +471,10 @@
     <div class="container">
         <div class="row row-padded">
             <div class="col-md-12 text-center">
-                <p class="to-animate">&copy; 2016 Foodee Free HTML5 Template. <br> Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://pexels.com/" target="_blank">Pexels</a> <br> Tasty Icons Free <a href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank">handdrawngoods</a>
+                <p class="to-animate">&copy; 2016 Foodee Free HTML5 Template. <br> Designed by <a
+                            href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a
+                            href="http://pexels.com/" target="_blank">Pexels</a> <br> Tasty Icons Free <a
+                            href="http://handdrawngoods.com/store/tasty-icons-free-food-icons/" target="_blank">handdrawngoods</a>
                 </p>
                 <p class="text-center to-animate"><a href="#" class="js-gotop">Go To Top</a></p>
             </div>
@@ -655,10 +490,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 
 <!-- jQuery -->

@@ -15,8 +15,17 @@ class FoodRepository extends BaseRepository
 
     public function getFeatureFood($isFeature, $paginate)
     {
-        return $this->scopeQuery(function ($query) use ($isFeature, $paginate) {
-            return $query->where('is_feature', 1);
+        return $this->scopeQuery(function ($query) use ($isFeature) {
+            return $query->where('is_feature', 1)
+                ->orderBy('created_at', 'DESC');
         })->paginate($paginate, null);
     }
+
+    public function getFoodsWithCategory($id, $paginate)
+    {
+        return $this->scopeQuery(function ($query) use ($id) {
+            return $query->where('category_id', $id);
+        })->paginate($paginate, null);
+    }
+
 }

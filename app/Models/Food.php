@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\URL;
 
 class Food extends Model
 {
@@ -19,9 +20,15 @@ class Food extends Model
         'updated_at',
     ];
 
+    protected $appends = ['thumbnail'];
+
     public function category()
     {
         $this->belongsTo('App\Models\Category');
     }
 
+    public function getThumbnailAttribute()
+    {
+        return URL::to('/') . '/storage/foods/' . $this->attributes['thumbnail'];
+    }
 }

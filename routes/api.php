@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,12 +13,22 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
+$api = app('Dingo\Api\Routing\Router');
 
-Route::post('auth/register', 'Controller@register');
-Route::post('auth/login', 'Controller@login');
+$api->version('v1', ['namespace' => 'App\Http\Controllers\V1'], function ($api) {
+    require __DIR__ . '/api/v1/public.php';
+});
+
+$api->version('v1', [
+    'namespace' => 'App\Http\Controllers\V1',
+    'middleware' => 'jwt.auth'], function ($api) {
+    require __DIR__ . '/api/v1/private_admin.php';
+});
+
+
+//Route::post('auth/register', 'Controller@register');
+//Route::post('auth/login', 'Controller@login');
 Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('user', 'Controller@getAuthUser');
+    Route::post('/admin/addfood', 'FoodController@postFood');
 });
