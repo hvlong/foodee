@@ -13,6 +13,25 @@ class FoodRepository extends BaseRepository
         return Food::class;
     }
 
+    public function create(array $data)
+    {
+        $model = parent::create($data);
+        $model->save();
+        return $this->parserResult($model);
+    }
+
+    public function update(array $data, $id)
+    {
+        $model = parent::update($data, $id);
+        $model->save();
+        return $this->parserResult($model);
+    }
+
+    public function delete($id)
+    {
+        return parent::delete($id);
+    }
+
     public function getFeatureFood($isFeature, $paginate)
     {
         return $this->scopeQuery(function ($query) use ($isFeature) {
@@ -21,11 +40,18 @@ class FoodRepository extends BaseRepository
         })->paginate($paginate, null);
     }
 
-    public function getFoodsWithCategory($id, $paginate)
+    public function getFoodList($categoryId, $page)
     {
-        return $this->scopeQuery(function ($query) use ($id) {
-            return $query->where('category_id', $id);
-        })->paginate($paginate, null);
+        return $data = $this->scopeQuery(function ($query) use ($categoryId) {
+            return $query->where('category_id', $categoryId);
+        })->paginate($page);
+    }
+
+    public function getAllFood($limit)
+    {
+        return $this->scopeQuery(function ($query) {
+            return $query->select('*');
+        })->paginate($limit);
     }
 
 }

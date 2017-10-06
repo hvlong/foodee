@@ -16,6 +16,7 @@ class Food extends Model
         'description',
         'is_feature',
         'category_id',
+        'category',
         'created_at',
         'updated_at',
     ];
@@ -31,4 +32,5 @@ class Food extends Model
     {
         return URL::to('/') . '/storage/foods/' . $this->attributes['thumbnail'];
     }
+
 }

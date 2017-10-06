@@ -13,25 +13,27 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'V1\HomeController@getAllInfo');
+//Home page
+Route::get('/', 'Site\HomeController@index');
 
 //Admin
-Route::match(['get', 'post'],'/admin/login', 'V1\AdminController@login');
-Route::get('/admin/logout', 'V1\AdminController@logout');
+Route::get('/admin/logout', 'Site\Auth\LogoutController@logout');
+Route::get('/admin/login', 'Site\Auth\LoginController@login');
+Route::post('/admin/login', 'Site\Auth\LoginController@login');
 
-Route::group(['middleware' => 'auth.admin'], function() {
-    Route::get('/admin/index', 'V1\AdminController@index');
-    Route::get('/admin/users', 'V1\AdminController@getAllUser');
-    Route::get('/admin/foods', 'V1\AdminController@getAllFood');
-    Route::get('/admin/create-user', 'V1\AdminController@registerUser');
-    Route::post('/admin/create-user', 'V1\AdminController@postRegisterUser');
-    Route::get('/admin/addfood', 'V1\AdminController@addFood');
-    Route::post('/admin/addfood', 'V1\AdminController@postFood');
-    Route::get('/admin/food-detail/{id}', 'V1\AdminController@foodDetail');
-    Route::get('/admin/edit-food/{id}', 'V1\AdminController@getInfoFood');
-    Route::post('/admin/edit-food/{id}', 'V1\AdminController@editFood');
-    Route::get('/admin/delete-food/{id}', 'V1\AdminController@deleteFood');
-    Route::get('/admin/add-event', 'V1\EventController@addEvent');
-    Route::post('/admin/add-event', 'V1\EventController@postEvent');
-    Route::get('/admin/events', 'V1\EventController@getAllEvent');
+Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function() {
+
+    Route::get('users', 'Site\UserController@index');
+
+    Route::get('foods', 'Site\FoodController@index');
+    Route::get('foods/create', 'Site\FoodController@create');
+    Route::post('foods/create', 'Site\FoodController@store');
+    Route::get('foods/{id}', 'Site\FoodController@show');
+    Route::get('foods/{id}/edit', 'Site\FoodController@edit');
+    Route::put('foods/{id}', 'Site\FoodController@update');
+    Route::delete('foods/{id}', 'Site\FoodController@destroy');
+
+    Route::get('events', 'Site\EventController@index');
+    Route::get('events/create', 'Site\EventController@create');
+    Route::post('events/create', 'Site\EventController@store');
 });

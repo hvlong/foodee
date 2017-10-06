@@ -35,7 +35,7 @@
         </div>
         <!-- Main content -->
         <section class="content" style="margin-top: 20px">
-            <form role="form" action="/admin/addfood" method="post" enctype="multipart/form-data">
+            <form role="form" action="/admin/foods/create" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="box-body">
                     <div class="form-group">

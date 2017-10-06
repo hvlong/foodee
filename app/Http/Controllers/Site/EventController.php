@@ -6,32 +6,31 @@
  * Time: 10:20 AM
  */
 
-namespace App\Http\Controllers\V1;
-
+namespace App\Http\Controllers\Site;
 
 use App\Repositories\EventRepository;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
 use Validator;
 
-class EventController extends Controller
+class EventController extends BaseController
 {
 
     protected $eventRepository;
 
     public function __construct(EventRepository $eventRepository)
     {
-        parent::__construct();
         $this->eventRepository = $eventRepository;
     }
 
-    public function addEvent()
+    public function create()
     {
         return view('admin.addevent');
     }
 
-    public function postEvent(Request $request)
+    public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'title' => 'required',
@@ -78,17 +77,13 @@ class EventController extends Controller
         if ($message['content'] !== null) {
             return view('admin.addevent', compact('message'));
         }
-        return redirect('admin/foods');
+        return redirect('admin/events');
     }
 
-    public function getAllEvent()
+    public function index()
     {
         $events = $this->eventRepository->all();
         return view('admin.events', compact('events'));
     }
 
-    public function getActiveEvent()
-    {
-
-    }
 }

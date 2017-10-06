@@ -22,10 +22,10 @@
         </div>
         <!-- Main content -->
         <section class="content" style="margin-top: 20px">
-            <form role="form" action="/admin/edit-food/{!!$food->id!!}" method="get">
+            <form role="form" action="/admin/foods/{!!$food->id!!}/edit" method="get">
                 <div class="box-body">
                     <div>
-                        <img src="{{ asset('storage/foods/' . $food->thumbnail)}}" width="150">
+                        <img src="{{$food->thumbnail}}" width="150">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name Food</label>

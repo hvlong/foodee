@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Foodee &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+    <title>Foodee</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
     <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
@@ -83,7 +83,7 @@
                 <div class="container">
                     <div class="row">
                         <h1 class="to-animate">foodee</h1>
-                        <h2 class="to-animate">Thế Giới Ẩm Thực</h2>
+                        <h2 class="to-animate">Like Mom’s house</h2>
                     </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@
             <div class="row text-center fh5co-heading row-padded">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="heading to-animate">Feature Food</h2>
-                    <p class="sub-heading to-animate">Eat One, Forever In Mind</p>
+                    <p class="sub-heading to-animate">The good taste of food</p>
                 </div>
             </div>
             <div class="row">

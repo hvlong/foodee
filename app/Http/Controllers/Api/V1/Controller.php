@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\V1;
+namespace App\Http\Controllers\Api\V1;
 
 use Dingo\Api\Routing\Helpers;
 use Dingo\Api\Http\Request;

@@ -22,7 +22,7 @@
         </div>
         <!-- Main content -->
         <section class="content" style="margin-top: 20px">
-            <form role="form" action="/admin/add-event" method="post" enctype="multipart/form-data">
+            <form role="form" action="/admin/events/create" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="box-body">
                     <div class="form-group">

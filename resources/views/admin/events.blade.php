@@ -13,7 +13,7 @@
                 Food List
             </h1>
             <ol class="breadcrumb">
-                <button onclick="location.href='{{ url('admin/add-event') }}'" type="submit"
+                <button onclick="location.href='{{ url('admin/events/create') }}'" type="submit"
                         class="btn btn-block btn-primary btn-lg">Add Food
                 </button>
             </ol>
@@ -39,9 +39,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $counter = 0 ?>
+                            @php($counter = 0)
                             @foreach($events as $event)
-                                <?php $counter++ ?>
+                                @php($counter++)
                                 <tr>
                                     <td>{{$counter}}</td>
                                     <td>{{$event->title}}</td>

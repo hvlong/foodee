@@ -5,7 +5,6 @@
 <div class="wrapper">
 @include('admin.header')
 @include('admin.sidebar')
-<?php $foodList = isset($foods) ? $foods : array();?>
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -14,7 +13,7 @@
                 Food List
             </h1>
             <ol class="breadcrumb">
-                <button onclick="location.href='{{ url('admin/addfood') }}'" type="submit"
+                <button onclick="location.href='{{ url('admin/foods/create') }}'" type="submit"
                         class="btn btn-block btn-primary btn-lg">Add Food
                 </button>
             </ol>
@@ -40,28 +39,36 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $counter = 0;?>
-                            <?php foreach ($foodList as $food) :?>
-                            <tr onclick="location.href='{{ url('admin/food-detail') }}' + '/<?php echo $food->id?>'">
-                                <?php $counter++?>
-                                <td><?php echo $counter ?></td>
-                                <td><?php echo $food->name ?></td>
-                                <td><?php echo number_format(($food->price / 100), 3)?>VND</td>
-                                <td><?php echo $food->thumbnail ?></td>
-                                <td><?php echo $food->description ?></td>
-                                <td><?php echo $food->is_feature ?></td>
-                                <td>
-                                    <a href="{{ url('admin/edit-food')}}<?php echo '/' . $food->id?>">
-                                        <i id="edit-img" class="fa fa-edit"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{{ url('admin/delete-food')}}<?php echo '/' . $food->id?>">
-                                        <i class="glyphicon glyphicon-remove" style="color: red"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
+                            @if(isset($foods))
+                                @php($counter = 0)
+                                @foreach($foods as $food)
+                                    <tr onclick="location.href='{{ url('admin/foods/') }}'{{$food->id}}">
+                                        @php($counter++)
+                                        <td>{{$counter}}</td>
+                                        <td><a href="{{ url('admin/foods')}}/{{$food->id}}">{{$food->name}}</a></td>
+                                        <td>{{number_format(($food->price / 100), 3)}}VND</td>
+                                        <td>{{$food->thumbnail}}</td>
+                                        <td>{{$food->description}}</td>
+                                        <td>{{$food->is_feature}}</td>
+                                        <td>
+                                            <a href="{{ url('admin/foods')}}/{{$food->id}}/edit">
+                                                <i id="edit-img" class="fa fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <form role="form" method="post" enctype="multipart/form-data"
+                                                  action="{{ url('admin/foods')}}/{{$food->id}}">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit">
+                                                    <i class="glyphicon glyphicon-remove" style="color: red"></i>
+                                                </button>
+                                            </form>
+
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
                             </tbody>
                         </table>
                     </div>
