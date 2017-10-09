@@ -1,5 +1,3 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-
 ## Foodee Site
 
 The project demo use laravel framework, project include website and admin to manage. The Website introduce about restaurant, menu, feature foods, event,... and admin site to manage delete, add, edit items.
@@ -34,28 +32,12 @@ git clone https://github.com/hvlong/foodee.git
 127.0.0.1 dev.foodee.vn
 ```
 
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
-
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
+- The next step, open phpadmin to create database and import file database foodee.sql into it.
+- And, don't forget change DB_DATABASE, DB_USERNAME, DB_PASSWORD at .env responding your account login phpadmin
+- Finally, open website with domain:
+```sh
+dev.foodee.vn
+```
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
