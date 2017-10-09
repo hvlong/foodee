@@ -1,23 +1,39 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
 ## Foodee Site
 
 The project demo use laravel framework, project include website and admin to manage. The Website introduce about restaurant, menu, feature foods, event,... and admin site to manage delete, add, edit items.
 
 ## Getting Started:
 
-First, run the following:
+First,  run the following:
 
+- Install XAMPP
+- Move to htdocs
+- Clone project from git:
 ```sh
 git clone https://github.com/hvlong/foodee.git
 ```
+- Add and configure virtual host at file C:\xampp\apache\conf\extra\httpd-vhosts.conf:
+```sh
+<VirtualHost *:80>
+        ServerName dev.foodee.vn
+        DocumentRoot "C:\xampp\htdocs\foodee\public"
+
+        ErrorLog "logs/dev.foodee.vn-error.log"
+        CustomLog "logs/dev.foodee.vn-access.log" common
+        <Directory C:\xampp\htdocs\foodee\public>
+                AllowOverride All
+                Require all granted
+        </Directory>
+</VirtualHost>
+```
+
+- Add host name of project to hosts file at folder C:\Windows\System32\drivers\etc:
+```sh
+127.0.0.1 dev.foodee.vn
+```
+
 
 ## Laravel Sponsors
 
