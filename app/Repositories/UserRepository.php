@@ -25,5 +25,4 @@ class UserRepository extends BaseRepository
         return User::class;
     }
 
-
 }

@@ -61,8 +61,6 @@ class FoodController extends Controller
                 $foods = $this->foodRepository->getFoodList($request->get('category_id'), $request->get('limit'));
             }
             return $this->responseSuccess($foods, __('messages.success'));
-        } catch (JWTException $e) {
-            return $this->responseUnauthorized();
         } catch (Exeption $e) {
             return $this->responseError(__('messages.something_went_wrong'), $e->getCode());
         }
@@ -83,8 +81,6 @@ class FoodController extends Controller
             $data['thumbnail'] = $path;
             $food = $this->foodRepository->update($data, $id);
             return $this->responseSuccess($food, __('messages.success'));
-        } catch (JWTException $e) {
-            return $this->responseUnauthorized();
         } catch (Exeption $e) {
             return $this->responseError(__('messages.something_went_wrong'), $e->getCode());
         }
@@ -95,8 +91,6 @@ class FoodController extends Controller
         try {
             $this->foodRepository->delete($id);
             return $this->responseSuccess(['food' => $id], __('messages.success'));
-        } catch (JWTException $e) {
-            return $this->responseUnauthorized();
         } catch (Exeption $e) {
             return $this->responseError(__('messages.something_went_wrong'), $e->getCode());
         }
