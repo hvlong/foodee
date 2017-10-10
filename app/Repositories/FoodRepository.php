@@ -54,4 +54,11 @@ class FoodRepository extends BaseRepository
         })->paginate($limit);
     }
 
+    public function show($id)
+    {
+        $food = $this->scopeQuery(function ($query) use ($id) {
+            return $query->with('category');
+        });
+    }
+
 }
