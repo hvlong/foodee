@@ -103,12 +103,9 @@ class FoodController extends Controller
             $category = $this->categoryRepository->find($food->category_id);
             $nameCategory = $category->name;
             return $this->responseSuccess($food, __('messages.success'));
-        } catch (JWTException $e) {
-            return $this->responseUnauthorized();
-        } catch (Exeption $e) {
+        }catch (Exeption $e) {
             return $this->responseError(__('messages.something_went_wrong'), $e->getCode());
         }
     }
-
 
 }
