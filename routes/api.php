@@ -24,3 +24,7 @@ $api->version('v1', [
     'middleware' => 'jwt.auth'], function ($api) {
     require __DIR__ . '/api/v1/private_admin.php';
 });
+
+Route::get('test', function () {
+   return 'test';
+});
