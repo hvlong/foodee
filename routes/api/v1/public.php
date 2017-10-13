@@ -7,3 +7,6 @@
  */
 $api->post('auth/login', 'Auth\LoginController@login');
 $api->post('auth/register', 'Auth\RegisterController@register');
+$api->get('tetsauth', function () {
+   return 'OK';
+});
