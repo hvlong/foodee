@@ -39,9 +39,9 @@ class HomeController extends Controller
     public function index()
     {
         $drinks = $this->foodRepository->getFoodList(1, 4);
-        $seaFoods = $this->foodRepository->getFoodList(2, 4);
-        $vegetables = $this->foodRepository->getFoodList(3, 4);
-        $meats = $this->foodRepository->getFoodList(4, 4);
+        $seaFoods = $this->foodRepository->getFoodList(11, 4);
+        $vegetables = $this->foodRepository->getFoodList(21, 4);
+        $meats = $this->foodRepository->getFoodList(31, 4);
         $events = $this->eventRepository->getNearestEventList(Carbon::now()->toDateString(), 3);
         $categorys = $this->categoryRepository->all();
         $featureFood = $this->getFeatureFood();
