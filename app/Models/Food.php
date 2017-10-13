@@ -30,7 +30,8 @@ class Food extends Model
 
     public function getThumbnailAttribute()
     {
-        return URL::to('/') . '/storage/foods/' . $this->attributes['thumbnail'];
+//        return URL::to('/') . '/storage/foods/' . $this->attributes['thumbnail'];
+        return 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2009/5/13/0/IG0501_31046_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371589314633.jpeg';
     }
 
 }
