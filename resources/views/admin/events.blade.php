@@ -14,7 +14,7 @@
             </h1>
             <ol class="breadcrumb">
                 <button onclick="location.href='{{ url('admin/events/create') }}'" type="submit"
-                        class="btn btn-block btn-primary btn-lg">Add Food
+                        class="btn btn-block btn-primary btn-lg">Add Event
                 </button>
             </ol>
         </section>
