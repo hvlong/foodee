@@ -17,7 +17,8 @@
         "dingo/blueprint": "^0.2",
         "illuminate/routing": "^5.1",
         "illuminate/support": "^5.1",
-        "league/fractal": "^0.17"
+        "league/fractal": "^0.17",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "~2",
