@@ -56,6 +56,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => 'us-cdbr-iron-east-05.cleardb.net',
+            'port' => '3306',
             'database' => 'heroku_90b7819d79fe520',
             'username' => 'bdedb7e32c8de9',
             'password' => '2a3731bc',
