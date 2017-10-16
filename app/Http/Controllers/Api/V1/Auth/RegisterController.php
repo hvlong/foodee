@@ -19,6 +19,9 @@ class RegisterController extends Controller
 
     public function register(RegisterAccountRequest $request)
     {
+        if (isset($request->validator) && $request->validator->messages()) {
+            return $this->responseError($request->validator->messages(), 400);
+        }
         DB::beginTransaction();
         try {
             $user = $this->user->create([

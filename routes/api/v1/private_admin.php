@@ -7,10 +7,10 @@
  */
 $api->get('foods', 'FoodController@index');
 
-$api->post('foods/create', 'FoodController@create');
+$api->post('foods', 'FoodController@create');
 
 $api->get('foods/{id}', 'FoodController@show');
 
-$api->post('foods/{id}/edit', 'FoodController@update');
+$api->put('foods', 'FoodController@update');
 
 $api->delete('foods/{id}', 'FoodController@delete');

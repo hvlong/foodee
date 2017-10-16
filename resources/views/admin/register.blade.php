@@ -23,12 +23,12 @@
         </div>
         <!-- Main content -->
         <section class="content" style="margin-top: 20px">
-            <form role="form" action="/admin/create-user" method="post" enctype="multipart/form-data">
+            <form role="form" action="/admin/register" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input name="name" type="text" class="form-control" id="fullName"
+                        <label for="name">Full Name</label>
+                        <input name="name" type="text" class="form-control" id="name"
                                placeholder="Full Name">
                     </div>
                     <div class="form-group">
@@ -46,11 +46,16 @@
                         <input type="password" class="form-control" id="rePassword" name="rePassword"
                                placeholder="Re-Password">
                     </div>
+                    <div class="checkbox">
+                        <label style="font-weight: bold">
+                            <input name="is-admin" type="checkbox" value="1"> Is Admin
+                        </label>
+                    </div>
                 </div>
 
                 <div class="box-footer">
                     <button type="submit" class="btn btn-primary"
-                            style="padding: 10px 30px 10px 30px; font-size: 20px;">Create
+                            style="padding: 10px 30px 10px 30px; font-size: 20px;">Register
                     </button>
                 </div>
             </form>

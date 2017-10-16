@@ -25,6 +25,9 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function() {
 
     Route::get('users', 'Site\UserController@index');
 
+    Route::get('register', 'Site\Auth\RegisterController@create');
+    Route::post('register', 'Site\Auth\RegisterController@store');
+
     Route::get('foods', 'Site\FoodController@index');
     Route::get('foods/create', 'Site\FoodController@create');
     Route::post('foods/create', 'Site\FoodController@store');
@@ -36,4 +39,5 @@ Route::group(['middleware' => 'auth.admin', 'prefix' => 'admin'], function() {
     Route::get('events', 'Site\EventController@index');
     Route::get('events/create', 'Site\EventController@create');
     Route::post('events/create', 'Site\EventController@store');
+
 });

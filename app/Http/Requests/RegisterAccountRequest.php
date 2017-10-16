@@ -3,10 +3,14 @@
 namespace App\Http\Requests;
 
 use Dingo\Api\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Routing\Redirector;
 
 class RegisterAccountRequest extends FormRequest
 {
+
+    public $validator = null;
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -45,4 +49,10 @@ class RegisterAccountRequest extends FormRequest
         ];
     }
 
+    protected function failedValidation(Validator $validator)
+    {
+        $this->validator = $validator;
+    }
+
 }
+
